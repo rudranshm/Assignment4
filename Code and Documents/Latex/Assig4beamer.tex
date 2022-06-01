@@ -1,0 +1,103 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 3\4}
+\subtitle{Assignment 4 \\ \Large AI1110: Probability and Random Variables \\ \large Indian Institute of Technology Hyderabad}
+\author{Rudransh Mishra \\ \normalsize AI21BTECH11025 \\ \vspace*{20pt} \normalsize  29 May 2022 \\ \vspace*{20pt} PROBABILITY, RANDOM VARIABLES, AND STOCHASTIC PROCESSES\\ \normalsize Athanasios Papoulis}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Question frame
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{Example 1-3}
+        We are given a circle C of radius r and we wish to determine the             probability p that the length 1 of a "randomly selected" cord AB is         greater than the length $r \sqrt 3 $ of the inscribed equilateral           triangle.
+    \end{block}
+\end{frame}
+
+% Solution frames
+\begin{frame}{Solution}
+We shall show that this problem can be given at least three reasonable solutions.
+\begin {enumerate}
+\item If the center M of the cord A B lies inside the circle of radius $\frac{r}{2}$ then $I > r \sqrt 3 $. It is reasonable, therefore, to consider as favorable outcomes all points inside the inner circle and as possible outcomes all points insidethe outer circle. Using as measure of their numbers the corresponding areas $\pi \frac{r^2}{4}$ and $\pi r ^ 2 $, we conclude that
+\begin {align}
+  $P = \(\frac{\pi \frac{r^2}{4}}{\pi r ^ 2 }\)$
+  $ = \(\frac{1}{4}\)$
+\end {align}
+
+\end{enumerate}
+\end{frame}
+\begin{frame}{Solution(contd.)}
+\begin{enumerate}\setcounter{enumi}{1}
+\item We now assume that the end A of the cord AB is fixed. This reduces the number of possibilities but it has no effect on the value of p because the number of favorable locations of B is reduced proportionately. If B is on the 120\degree  arc directly opposite to the point A, then $1 > r \sqrt 3$. The favorable outcomes are now the points on this arc and the total outcomes all points on the circumference of the circle C. Using as their measurements the corresponding lengths $\frac {2 \pi r}{3}$ and $2\pi r$, we obtain
+\begin {align}
+  $P = \(\frac{\frac{2 \pi r}{3}}{2 \pi r}\)$
+  $ = \(\frac{1}{3}\)$
+\end {align}
+\end{enumerate}
+\end{frame}
+\begin{frame}{Solution(contd.)}
+\begin{enumerate}\setcounter{enumi}{2}
+\item We assume finally that the direction of AB is perpendicular to the diameter of the circle. As in (2) this restriction has no effect on the value of P. If the center M of AB is less than $\frac{r}{2}$ distance from the center, , then $1 > r\sqrt 3$. Favorable outcomes are now the points on the line till $\frac{r}{2}$ distance on either side of the center and possible outcomes all points on the diameter. Using as their measures the respective lengths r and 2r. we obtain
+\begin {align}
+  $P = \(\frac{r}{2r}\)$
+  $ = \(\frac{1}{2}\)$
+\end {align}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Solution(contd.)}
+    We have thus found not one but three different solutions for the same problem! One might remark that these solutions correspond to three different experiments. This is true but not obvious and. in any case, it demonstrates the ambiguities associated with the classical definition, and the need for a clear specification of the outcomes of an experiment and the meaning of the terms "possible" and ''favorable.''\\
+\end{frame}
+\begin{frame}{Validity}
+\textbf{Validity.} We shall now discuss the value of the classical definition in the detennination of probabilistic data and as a working hypothesis.
+
+\begin{enumerate}
+\item In many applications, the assumption that there are N equally likely alternatives is well established through long experience. For example, "If a ball is selected at random from a box containing m black and n white balls, the probability that it is white equals n/(m + n)," or, "If a call occurs at random in the time interval (0, T), the probability that it occurs in the interval (t1, t2) equals ".$\frac {t2 - t1} {T}$".\\
+
+Such conclusions are of course, valid and useful; however, their Validity rests on the meaning of the word random. The conclusion of the last example that "the unknown probability equals $\frac {t2 - t1} {T}$" is not a consequence of the "randomness" of the call. The two statements are merely equivalent and they follow not from a prior reasoning but from past records of telephone calls.\\
+\end{enumerate}
+\end{frame}
+\begin{frame}{Validity(contd.)}
+\begin{enumerate}\setcounter{enumi}{1}
+\item In a number of applications it is impossible to determine the probabilities of various events by repeating the underlying experiment a sufficient number of times. In such cases, we have no choice but to assume that certain alternatives are equally likely and to detennine the desired probabilities from (1-7). This means that we use the classical definition as a working hypothesis. The hypothesis is accepted if its observable consequences agree with experience, otherwise it is rejected.
+\end{enumerate}
+
+\end{frame}
+
+
+% Python frame
+\section{Python Code}
+\begin{frame}{Python Code}
+import random\\
+
+R=random.random()\\
+pi=3.1415\\
+\#Method1\\
+P=(pi*((R/2)**2))/(pi*(R**2))\\
+print("The first probability is :", P)\\
+\#Method2\\
+P=(((2*pi)/3)*(R))/(2*pi*R)\\
+print("The second probability is :", P)\\
+\#Method3\\
+P=((R/2)/(R))\\
+print("The third probability is :", P)\\
+\end{frame} 
+
+\end{document}
